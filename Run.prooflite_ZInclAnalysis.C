@@ -2,8 +2,8 @@
     /////////////////////////////////////////////////////
     //
     // INPUT DATA SAMPLE
-//    TDSet* dataset = new TDSet("TTree", "Z_data","mkcands");
-    TDSet* dataset = new TDSet("TTree", "Z_data"); 
+    TDSet* dataset = new TDSet("TTree", "Z_data","mkcands");
+//    TDSet* dataset = new TDSet("TTree", "Z_data");  // for Bp
    // 
     ////////////////////////////////////////////////////// full path is mandatory
     //
@@ -14,9 +14,9 @@
 //    dataset->Add("/cmshome/cristella/work/Z_analysis/exclusive/CMSSW_5_3_7_patch5/src/UserCode/PsiPrimePiKPAT/test/rootuples/june2014/MuOniaRun2012B_13Jul_JPsiPiPiPAT-datasetB.root");
 //     dataset->Add("/lustre/cms/store/user/nsur/DoubleMu_Run2012A_13Jul2012_RECO_MuMuPiKPAT_ntpl_merged.root");
 //     dataset->Add("/lustre/cms/store/user/nsur/DoubleMu_Run2012D_PromptReco_RECO_MuMuPiKPAT_ntpl_merged.root");
-//     dataset->Add("/lustre/cms/store/user/lecriste/june2016/B0ToPsiMuMu_2MuPtEtaFilter_8TeV-pythia6-evtgen/crab_official_MC_B0ToPsiMuMu_nB0/160529_225236/officialBdToPsiMuMu_noPtEtaCut_MuMuPiKPAT_ntpl__0004.root");
+     dataset->Add("/lustre/cms/store/user/lecriste/june2016/B0ToPsiMuMu_2MuPtEtaFilter_8TeV-pythia6-evtgen/crab_official_MC_B0ToPsiMuMu_nB0/160529_225236/officialBdToPsiMuMu_noPtEtaCut_MuMuPiKPAT_ntpl__0004.root");
 //     dataset->Add("/lustre/cms/store/user/lecriste/june2016/BsToPsiMuMu_2MuPtEtaFilter_8TeV-pythia6-evtgen/crab_official_MC_Bs0ToPsiMuMu_nB0/160624_172914/officialBsToPsiMuMu_noPtEtaCut_MuMuPiKPAT_ntpl__0001.root");
-     dataset->Add("/lustre/cms/store/user/lecriste/june2016/BpToPsiMuMu_2MuPtEtaFilter_8TeV-pythia6-evtgen/crab_official_MC_Bu0ToPsiMuMu_nB0/160705_133450/BuToJpsiK_18Mar_MuMuPiKPAT_ntpl__0001.root");
+//     dataset->Add("/lustre/cms/store/user/lecriste/june2016/BpToPsiMuMu_2MuPtEtaFilter_8TeV-pythia6-evtgen/crab_official_MC_Bu0ToPsiMuMu_nB0/160705_133450/BuToJpsiK_18Mar_MuMuPiKPAT_ntpl__0000.root");
 //     dataset->Add("/lustre/cms/store/user/lecriste/june2016/LambdaBToPsiMuMu_2MuPtEtaFilter_8TeV-pythia6-evtgen/crab_official_MC_LambdaBToPsiMuMu_nB0/160926_095259/officialLambdabToPsiMuMu_noPtEtaCut_MuMuPiKPAT_ntpl_.root");
 //     dataset->Add("/lustre/home/nsur/Z_analysis_bkg/officialBdToPsiMuMu_noPtEtaCut_MuMuPiKPAT_ntpl_619.root");
 /*

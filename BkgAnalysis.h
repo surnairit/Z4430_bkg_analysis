@@ -715,26 +715,47 @@ public :
     
     TH1F* hJpsiPiMass;
     TH1F* hKPiMass;
+    TH1F* hKPiRevMass;
     TH1F* hPiPiMass;
     TH1F* hKKMass;
+    TH1F* hKProtonMass;
+    TH1F* hPiProtonMass;
     TH1F* hKPiMass_noBs;
     
     TH1F* hJpsiPiMass_peak;
     TH1F* hKPiMass_peak;
+    TH1F* hKPiRevMass_peak;
     TH1F* hPiPiMass_peak;
+    TH1F* hKProtonMass_peak;
+    TH1F* hPiProtonMass_peak;
     TH1F* hKKMass_peak;
 
     TH1F* hJpsiPiMass_sb;
     TH1F* hKPiMass_sb;
+    TH1F* hKPiRevMass_sb;
     TH1F* hPiPiMass_sb;
+    TH1F* hKProtonMass_sb;
+    TH1F* hPiProtonMass_sb;
     TH1F* hKKMass_sb;
     
     TH1F* hjpsiKPiMassBaseSelAlt;
+    TH1F* hjpsiKPiRevMassBaseSelAlt;
     TH1F* hjpsiKKMassBaseSelAlt;
     TH1F* hjpsiPiPiMassBaseSelAlt;
+    TH1F* hjpsiKProtonMassBaseSelAlt;
+    TH1F* hjpsiPiProtonMassBaseSelAlt;
     TH1F* hjpsiPhiToKKMass;
     TH1F* hjpsiKPiMassNoPhi;
+    TH1F* hjpsiKPiMassNoPhi_discard;
+    TH1F* hjpsiPiPiMassNoPhi;
+    TH1F* hjpsiPiPiMassNoPhi_discard;
+    
 //    TH1F* hjpsiKPiMassNoPhiNoBs;
+
+    TH2F* hJpsiKPi_JpsiKKBaseSelAlt;
+    TH2F* hJpsiKPi_JpsiPiPiBaseSelAlt;
+    TH2F* hJpsiKPi_JpsiPiProtonBaseSelAlt;
+    TH2F* hJpsiKPi_JpsiKProtonBaseSelAlt;
     
     TH2F* hDalitz_peak;
     TH2F* hDalitz_sideband;
@@ -757,7 +778,7 @@ public :
     TH1F* htrackShits;
     TH1F* htrackPhits;
 
-    Double_t muon_mass, phi_mass, jpsi_mass, psi2S_mass, pionCh_mass, kaonCh_mass, beam_energy;
+    Double_t muon_mass, phi_mass, jpsi_mass, psi2S_mass, pionCh_mass, kaonCh_mass, proton_mass, beam_energy;
    
 
    ClassDef(BkgAnalysis,0);
@@ -783,6 +804,7 @@ void BkgAnalysis::Init(TTree *tree)
  psi2S_mass = 3.686109 ;
  pionCh_mass = 0.13957018;
  kaonCh_mass = 0.493677 ;
+ proton_mass = 0.938272;
  beam_energy = 4000.0;
    
 

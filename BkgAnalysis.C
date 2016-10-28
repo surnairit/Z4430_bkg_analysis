@@ -72,9 +72,9 @@ void BkgAnalysis::SlaveBegin(TTree * /*tree*/)
 
    TString option = GetOption();
 
-//    OutFile = new TProofOutputFile( "Bkg_B0ToPsiMuMu_2Mu.root" );
+    OutFile = new TProofOutputFile( "Bkg_B0ToPsiMuMu_0004.root" );
 //    OutFile = new TProofOutputFile( "Bkg_BsToPsiMuMu_0001.root" );
-   OutFile = new TProofOutputFile( "Bkg_BpToPsiMuMu_0001.root" );
+//   OutFile = new TProofOutputFile( "Bkg_BpToPsiMuMu_0000.root" );
 //   OutFile = new TProofOutputFile( "Bkg_LambdaBToPsiMuMu.root" );
 //    OutFile = new TProofOutputFile( "MuMuPiK_Jpsi_MuOnia2012B_output_small_ntpls_jpsi_eta.root" );
     
@@ -90,27 +90,47 @@ void BkgAnalysis::SlaveBegin(TTree * /*tree*/)
     hMuMuMass               = new TH1F("hMuMuMass","hMuMuMass",140,2.6,4.0);
     hJpsiPiMass             = new TH1F("hJpsiPiMass","hJpsiPiMass",1000,0,10);
     hKPiMass                = new TH1F("hKPiMass","hKPiMass",1000,0,10);
+    hKPiRevMass             = new TH1F("hKPiRevMass","hKPiRevMass",1000,0,10);
     hPiPiMass               = new TH1F("hPiPiMass","hPiPiMass",1000,0,10);
     hKKMass                 = new TH1F("hKKMass","hKKMass",1000,0,10);
+    hKProtonMass            = new TH1F("hKProtonMass","hKProtonMass",1000,0,10);
+    hPiProtonMass           = new TH1F("hPiProtonMass","hPiProtonMass",1000,0,10);
     hKPiMass_noBs           = new TH1F("hKPiMass_noBs","hKPiMass_noBs",1000,0,10);
     
     hJpsiPiMass_peak        = new TH1F("hJpsiPiMass_peak","hJpsiPiMass_peak",1000,0,10);
     hKPiMass_peak           = new TH1F("hKPiMass_peak","hKPiMass_peak",1000,0,10);
+    hKPiRevMass_peak        = new TH1F("hKPiRevMass_peak","hKPiRevMass_peak",1000,0,10);
     hPiPiMass_peak          = new TH1F("hPiPiMass_peak","hPiPiMass_peak",1000,0,10);
     hKKMass_peak            = new TH1F("hKKMass_peak","hKKMass_peak",1000,0,10);
+    hKProtonMass_peak       = new TH1F("hKProtonMass_peak","hKProtonMass_peak",1000,0,10);
+    hPiProtonMass_peak      = new TH1F("hPiProtonMass_peak","hPiProtonMass_peak",1000,0,10);
     
     hJpsiPiMass_sb          = new TH1F("hJpsiPiMass_sb","hJpsiPiMass_sb",1000,0,10);
     hKPiMass_sb             = new TH1F("hKPiMass_sb","hKPiMass_sb",1000,0,10);
+    hKPiRevMass_sb          = new TH1F("hKPiRevMass_sb","hKPiRevMass_sb",1000,0,10);
     hPiPiMass_sb            = new TH1F("hPiPiMass_sb","hPiPiMass_sb",1000,0,10);
     hKKMass_sb              = new TH1F("hKKMass_sb","hKKMass_sb",1000,0,10);
+    hKProtonMass_sb         = new TH1F("hKProtonMass_sb","hKProtonMass_sb",1000,0,10);
+    hPiProtonMass_sb        = new TH1F("hPiProtonMass_sb","hPiProtonMass_sb",1000,0,10);
     
-    hjpsiKPiMassBaseSelAlt  = new TH1F("hjpsiKPiMassBaseSelAlt"," MuMuKPiMass after basic selection",100, 4.8, 5.8);
-    hjpsiKKMassBaseSelAlt   = new TH1F("hjpsiKKMassBaseSelAlt"," MuMuKKMass after basic selection",100, 4.8, 5.8);
-    hjpsiPiPiMassBaseSelAlt = new TH1F("hjpsiPiPiMassBaseSelAlt"," MuMuPiPiMass after basic selection",100, 4.8, 5.8);
-    hjpsiPhiToKKMass        = new TH1F("hjpsiPhiToKKMass"," Jpsi Phi (-> KK) Mass after basic selection",100, 4.8, 5.8);
+    hjpsiKPiMassBaseSelAlt      = new TH1F("hjpsiKPiMassBaseSelAlt"," MuMuKPiMass after basic selection",100, 4.8, 5.8);
+    hjpsiKPiRevMassBaseSelAlt   = new TH1F("hjpsiKPiRevMassBaseSelAlt"," MuMuKPiMass K-Pi reversed after basic selection",100, 4.8, 5.8);
+    hjpsiKKMassBaseSelAlt       = new TH1F("hjpsiKKMassBaseSelAlt"," MuMuKKMass after basic selection",100, 4.8, 5.8);
+    hjpsiPiPiMassBaseSelAlt     = new TH1F("hjpsiPiPiMassBaseSelAlt"," MuMuPiPiMass after basic selection",100, 4.8, 5.8);
+    hjpsiKProtonMassBaseSelAlt      = new TH1F("hjpsiKProtonMassBaseSelAlt"," MuMuKProtonMass after basic selection",100, 4.8, 5.8);
+    hjpsiPiProtonMassBaseSelAlt      = new TH1F("hjpsiPiProtonMassBaseSelAlt"," MuMuPiProtonMass after basic selection",100, 4.8, 5.8);
+    hjpsiPhiToKKMass            = new TH1F("hjpsiPhiToKKMass"," Jpsi Phi (-> KK) Mass after basic selection",100, 4.8, 5.8);
 //    hjpsiKPiMassSelAlt		= new TH1F("hjpsiKPiMassSelAlt","hmjpsiKPiMassSel ALTERNATIVE", 100, 4.8, 5.8);
     hjpsiKPiMassNoPhi 		= new TH1F("hjpsiKPiMassNoPhi","hjpsiKPiMass No Phi to KK ", 100, 4.8, 5.8);
+    hjpsiKPiMassNoPhi_discard 		= new TH1F("hjpsiKPiMassNoPhi_discard","hjpsiKPiMass discarded for Phi->KK ", 100, 4.8, 5.8);
+    hjpsiPiPiMassNoPhi 		= new TH1F("hjpsiPiPiMassNoPhi","hjpsiPiPiMass No Phi to KK ", 100, 4.8, 5.8);
+    hjpsiPiPiMassNoPhi_discard 		= new TH1F("hjpsiPiPiMassNoPhi_discard","hjpsiPiPiMass discarded for Phi->KK ", 100, 4.8, 5.8);
 //    hjpsiKPiMassNoPhiNoBs 	= new TH1F("hjpsiKPiMassNoPhiNoBs","hjpsiKPiMass No Phi to KK && no Bs ", 100, 4.8, 5.8);
+
+    hJpsiKPi_JpsiKKBaseSelAlt   = new TH2F("hJpsiKPi_JpsiKKBaseSelAlt", "m(JpsiKPi)(x) vs m(JpsiKK)(y)",100, 4.8, 5.8,100, 4.8, 5.8 );
+    hJpsiKPi_JpsiPiPiBaseSelAlt   = new TH2F("hJpsiKPi_JpsiPiPiBaseSelAlt", "m(JpsiKPi)(x) vs m(JpsiPiPi)(y)",100, 4.8, 5.8,100, 4.8, 5.8 );
+    hJpsiKPi_JpsiPiProtonBaseSelAlt   = new TH2F("hJpsiKPi_JpsiPiProtonBaseSelAlt", "m(JpsiKPi)(x) vs m(JpsiProtonPi)(y)",100, 4.8, 5.8,100, 4.8, 5.8 );
+    hJpsiKPi_JpsiKProtonBaseSelAlt   = new TH2F("hJpsiKPi_JpsiKProtonBaseSelAlt", "m(JpsiKPi)(x) vs m(JpsiKProton)(y)",100, 4.8, 5.8,100, 4.8, 5.8 );
 
     hDalitz_peak            = new TH2F("hDalitz_peak","hDalitz_peak",600,0,6,1700,9,26);
     hDalitz_sideband        = new TH2F("hDalitz_sideband","hDalitz_sideband",600,0,6,1700,9,26);
@@ -187,10 +207,11 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
     TLorentzVector mu1_p4, mu2_p4;
     TLorentzVector muP_p4, muM_p4;
     TLorentzVector jpsip4;
-    TLorentzVector pip4, pip4_exchanged;
-    TLorentzVector kp4, kp4_exchanged;
+    TLorentzVector pip4, pip4_exchanged, pip4_proton;
+    TLorentzVector kp4, kp4_exchanged, kp4_proton;
     TLorentzVector Pip4_orig, Kp4_orig;
     TLorentzVector B0p4, B0p4_KPiExchanged, Bsp4_JpsiKK, JpsiPiPip4;
+    TLorentzVector JpsiKProton_p4, JpsiPiProton_p4;
     TLorentzVector Zcandp4;
 
   if ( nB0>0 ) { //b0 requirement
@@ -274,11 +295,16 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
         
   pip4_exchanged.SetVectM(pip4.Vect(), kaonCh_mass) ;
   kp4_exchanged.SetVectM(kp4.Vect(), pionCh_mass) ;
+  
+  pip4_proton.SetVectM(pip4.Vect(), proton_mass) ;
+  kp4_proton.SetVectM(kp4.Vect(), proton_mass) ;
 
 //  TLorentzVector B0p4, B0p4_KPiExchanged, Bsp4_JpsiKK, JpsiPiPip4;
   B0p4 = jpsip4+pip4+kp4;
   Bsp4_JpsiKK = jpsip4+kp4+pip4_exchanged;
   JpsiPiPip4 = jpsip4+pip4+kp4_exchanged;
+  JpsiKProton_p4 = jpsip4+kp4+pip4_proton;
+  JpsiPiProton_p4 = jpsip4+pip4+kp4_proton;
         
 
 
@@ -286,6 +312,9 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
         B0MassAlt = (jpsip4+pip4+kp4).Mag() - jpsip4.M() + jpsi_mass;
   Float_t BsMassAlt = (jpsip4+kp4+pip4_exchanged).Mag() - jpsip4.M() + jpsi_mass;
   Float_t JpsiPiPiMass = (jpsip4+pip4+kp4_exchanged).Mag()- jpsip4.M() + jpsi_mass;
+  
+  Float_t JpsiPiProtonMass = (jpsip4+pip4+kp4_proton).Mag()- jpsip4.M() + jpsi_mass;
+  Float_t JpsiKProtonMass = (jpsip4+kp4+pip4_proton).Mag()- jpsip4.M() + jpsi_mass;
         
         B0_Pt = B0p4.Pt();
         pion_fromB0_Pt = pip4.Pt();
@@ -303,7 +332,7 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
 //    hjpsiKPiMassBaseSelAlt->Fill( B0MassAlt );
 
   B0p4_KPiExchanged = jpsip4 + pip4_exchanged + kp4_exchanged;
-        
+  Float_t B0ExchangedMassAlt = B0p4_KPiExchanged.Mag() - jpsip4.M() + jpsi_mass;
         
 
 //  hjpsifromBMass->Fill((*MuMuMass)[(*B0MuMuIdx)[myB0Idx]]);
@@ -389,19 +418,38 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
   
     hJpsiPiMass->Fill(JpsiPiMass);
     hKPiMass->Fill(KPiMass);
+    hKPiRevMass->Fill((pip4_exchanged+kp4_exchanged).Mag());
     hPiPiMass->Fill((pip4+kp4_exchanged).Mag());
     hKKMass->Fill((kp4+pip4_exchanged).Mag());
     
+    hKProtonMass->Fill((kp4+pip4_proton).Mag());
+    hPiProtonMass->Fill((pip4+kp4_proton).Mag());
+    
     hjpsiKPiMassBaseSelAlt->Fill( B0MassAlt );
+    hjpsiKPiRevMassBaseSelAlt->Fill(B0ExchangedMassAlt);
     hjpsiKKMassBaseSelAlt->Fill( BsMassAlt );
+    hjpsiPiPiMassBaseSelAlt->Fill(JpsiPiPiMass);
+    
+    hjpsiKProtonMassBaseSelAlt->Fill(JpsiKProtonMass);
+    hjpsiPiProtonMassBaseSelAlt->Fill(JpsiPiProtonMass);
+    
+    hJpsiKPi_JpsiKKBaseSelAlt->Fill(B0MassAlt,BsMassAlt);
+    hJpsiKPi_JpsiPiPiBaseSelAlt->Fill(B0MassAlt,JpsiPiPiMass);
+    hJpsiKPi_JpsiPiProtonBaseSelAlt->Fill(B0MassAlt,JpsiPiProtonMass);
+    hJpsiKPi_JpsiKProtonBaseSelAlt->Fill(B0MassAlt,JpsiKProtonMass);
+    
     
     if ( B0MassAlt>5.22 && B0MassAlt<5.34 ) { // Dalitz peak
            hDalitz_peak->Fill(KPiMass*KPiMass,JpsiPiMass*JpsiPiMass);
         
            hJpsiPiMass_peak->Fill(JpsiPiMass);
            hKPiMass_peak->Fill(KPiMass);
+           hKPiRevMass_peak->Fill((pip4_exchanged+kp4_exchanged).Mag());
            hPiPiMass_peak->Fill((pip4+kp4_exchanged).Mag());
            hKKMass_peak->Fill((kp4+pip4_exchanged).Mag());
+        
+           hKProtonMass_peak->Fill((kp4+pip4_proton).Mag());
+           hPiProtonMass_peak->Fill((pip4+kp4_proton).Mag());
         
            } // Dalitz peak
     if ( (B0MassAlt>5.16 && B0MassAlt<5.22) || (B0MassAlt>5.34 && B0MassAlt<5.40) ) { // Dalitz sideband
@@ -409,8 +457,11 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
 
            hJpsiPiMass_sb->Fill(JpsiPiMass);
            hKPiMass_sb->Fill(KPiMass);
+           hKPiRevMass_sb->Fill((pip4_exchanged+kp4_exchanged).Mag());
            hPiPiMass_sb->Fill((pip4+kp4_exchanged).Mag());
            hKKMass_sb->Fill((kp4+pip4_exchanged).Mag());
+           hKProtonMass_sb->Fill((kp4+pip4_proton).Mag());
+           hPiProtonMass_sb->Fill((pip4+kp4_proton).Mag());
         
            } // Dalitz sideband
       
@@ -424,8 +475,12 @@ Bool_t BkgAnalysis::Process(Long64_t entry)
        if (  ((pip4_exchanged+kp4).Mag()< 1.01 ||  (pip4_exchanged+kp4).Mag()> 1.03) && (BsMassAlt<5.332 || BsMassAlt>5.40)  ) { // no Bs
        hjpsiKPiMassNoPhi->Fill(B0MassAlt);
        hKPiMass_noBs->Fill((pip4+kp4).Mag());
+       hjpsiPiPiMassNoPhi->Fill(JpsiPiPiMass);
        } // no Bs
-
+       else {
+       hjpsiKPiMassNoPhi_discard->Fill(B0MassAlt);
+       hjpsiPiPiMassNoPhi_discard->Fill(JpsiPiPiMass);
+       }
 /*
        if (  (BsMassAlt<5.332 || BsMassAlt>5.40) && ((pip4_exchanged+kp4).Mag()< 1.01 ||  (pip4_exchanged+kp4).Mag()> 1.03) ) { // no Bs
        hjpsiKPiMassNoPhi->Fill(B0MassAlt);
@@ -459,26 +514,48 @@ void BkgAnalysis::SlaveTerminate()
       hMuMuMass->Write();
       
       hjpsiKPiMassBaseSelAlt->Write();
+      hjpsiKPiRevMassBaseSelAlt->Write();
+      hjpsiKKMassBaseSelAlt->Write();
+      hjpsiPiPiMassBaseSelAlt->Write();
+      hjpsiKProtonMassBaseSelAlt->Write();
+      hjpsiPiProtonMassBaseSelAlt->Write();
 //      hjpsiKPiMassSelAlt->Write();
       hjpsiPhiToKKMass->Write();
       hjpsiKPiMassNoPhi->Write();
+      hjpsiKPiMassNoPhi_discard->Write();
+      hjpsiPiPiMassNoPhi->Write();
+      hjpsiPiPiMassNoPhi_discard->Write();
 //      hjpsiKPiMassNoPhiNoBs->Write();
+
+      hJpsiKPi_JpsiKKBaseSelAlt->Write();
+      hJpsiKPi_JpsiPiPiBaseSelAlt->Write();
+      hJpsiKPi_JpsiPiProtonBaseSelAlt->Write();
+      hJpsiKPi_JpsiKProtonBaseSelAlt->Write();
       
       hJpsiPiMass->Write();
       hKPiMass->Write();
+      hKPiRevMass->Write();
       hPiPiMass->Write();
       hKKMass->Write();
+      hKProtonMass->Write();
+      hPiProtonMass->Write();
       hKPiMass_noBs->Write();
 
       hJpsiPiMass_peak->Write();
       hKPiMass_peak->Write();
+      hKPiRevMass_peak->Write();
       hPiPiMass_peak->Write();
       hKKMass_peak->Write();
+      hKProtonMass_peak->Write();
+      hPiProtonMass_peak->Write();
 
       hJpsiPiMass_sb->Write();
       hKPiMass_sb->Write();
+      hKPiRevMass_sb->Write();
       hPiPiMass_sb->Write();
       hKKMass_sb->Write();
+      hKProtonMass_sb->Write();
+      hPiProtonMass_sb->Write();
 
 
         hDalitz_peak->Write();
